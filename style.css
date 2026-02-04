@@ -1,0 +1,500 @@
+/* =========================================================
+Portfolio Styles
+========================================================= */
+
+/* ---------------------------------------------------------
+   1) Fonts + CSS variables (site-wide settings)
+--------------------------------------------------------- */
+
+/* Heading font */
+@font-face {
+    font-family: "GT Pressura Mono";
+    src: url("fonts/GT-Pressura-Mono-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  :root {
+    /* Colors */
+    --bg: #ffffff;
+    --text: #111111;
+    --muted: #555555;
+    --line: #e6e6e6;
+    --card: #f8f5ff;
+    --accent: #5050ff;
+  
+    /* Layout */
+    --radius: 16px;
+    --max: 900px;
+  }
+  
+  /* ---------------------------------------------------------
+     2) Global defaults (keep things predictable)
+  --------------------------------------------------------- */
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Headings use the mono font for that “portfolio” vibe */
+  h1,
+  h2,
+  h3 {
+    font-family: "GT Pressura Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+      Consolas, "Liberation Mono", monospace;
+    font-weight: 400;
+  }
+  
+  /* Default link styling (we override this in components when needed) */
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  
+  /* ---------------------------------------------------------
+     3) Layout containers (header/main/footer width)
+  --------------------------------------------------------- */
+  
+  header,
+  main,
+  footer {
+    width: min(var(--max), 92vw);
+    margin: 0 auto;
+  }
+  
+  /* ---------------------------------------------------------
+     4) Header (intro + quick contact links)
+  --------------------------------------------------------- */
+  
+  header {
+    padding: 4rem 0 1.5rem;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.02em;
+  }
+  
+  header p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1rem;
+  }
+  
+  /* Logo sits between header + About */
+  .about-image {
+    width: 400px; /* tweak anytime */
+    height: auto;
+    display: block;
+    margin: 1.75rem auto 0.75rem;
+  }
+  
+  /* Header contact links: text-only, arrow appears on hover */
+  .header-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.75rem; /* gives links breathing room */
+    margin-top: 0.85rem;
+  }
+  
+  .header-links a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  
+    /* This “reserves” room for the arrow so hover doesn’t shift spacing */
+    padding-right: 1.1rem;
+    padding-left: 0.1rem;
+  
+    font-family: "GT Pressura Mono", ui-monospace, monospace;
+    font-size: 0.9rem;
+    color: var(--text);
+    text-decoration: none;
+  
+    transition: color 0.15s ease, font-weight 0.15s ease;
+  }
+  
+  .header-links a::after {
+    content: "→";
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+  
+  .header-links a:hover {
+    color: var(--accent);
+    font-weight: 700;
+  }
+  
+  .header-links a:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Mobile: stack header links so they don’t squish */
+  @media (max-width: 600px) {
+    .header-links {
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+  }
+  
+  /* ---------------------------------------------------------
+     5) Sections (default card look)
+  --------------------------------------------------------- */
+  
+  section {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  section h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+  }
+  
+  section p {
+    margin: 0.5rem 0;
+    color: var(--text);
+  }
+  
+  /* Sections that should NOT look like cards (ex: About + work preview wrapper) */
+  section.no-card {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  
+  /* ---------------------------------------------------------
+     6) Lists (education/skills/experience)
+  --------------------------------------------------------- */
+  
+  ul {
+    margin: 0.75rem 0 0;
+    padding-left: 1.15rem;
+  }
+  
+  li {
+    margin: 0.4rem 0;
+  }
+  
+  em {
+    color: var(--muted);
+  }
+  
+  /* Experience has nested bullet lists, make those feel lighter */
+  #experience ul ul {
+    margin-top: 0.5rem;
+    padding-left: 1.1rem;
+  }
+  
+  #experience ul ul li {
+    color: var(--muted);
+  }
+  
+  /* ---------------------------------------------------------
+     7) Work preview card (videos + hover overlay)
+  --------------------------------------------------------- */
+  
+  #work-preview {
+    padding-bottom: 3rem;
+  }
+  
+  /* Wrapper link: makes the whole card clickable */
+  .work-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  /* Card container */
+  .work-card {
+    position: relative;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #fff;
+    transition: transform 0.15s ease, box-shadow 0.15s ease,
+      border-color 0.15s ease;
+  }
+  
+  .work-link:hover .work-card {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+    border-color: var(--accent);
+  }
+  
+  /* Hover overlay that says “click me” */
+  .work-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 2;
+  }
+  
+  .work-link:hover .work-overlay {
+    opacity: 1;
+  }
+  
+  .work-overlay span {
+    font-family: "GT Pressura Mono", ui-monospace, monospace;
+    font-size: 0.9rem;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 0.6rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Two video clips side-by-side */
+  .work-media {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .work-media video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.2s ease;
+  }
+  
+  .work-link:hover .work-media video {
+    transform: scale(1.02);
+  }
+  
+  /* Text under the videos */
+  .work-meta {
+    padding: 0.9rem 1rem 1.1rem;
+  }
+  
+  .work-meta h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+  }
+  
+  .work-meta p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  
+  /* Mobile: stack videos */
+  @media (max-width: 700px) {
+    .work-media {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* ---------------------------------------------------------
+     8) Viz button (shared “CTA” style)
+  --------------------------------------------------------- */
+  
+  /* This is the “View my data visualizations” button on index.html */
+  .viz-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    margin: 0.25rem auto 0;
+    padding: 0.9rem 1.4rem;
+  
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: #fff;
+  
+    transition: border-color 0.15s ease;
+  }
+  
+  .viz-button-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  
+    font-family: "GT Pressura Mono", ui-monospace, monospace;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--text);
+  
+    transition: font-weight 0.15s ease, color 0.15s ease;
+  }
+  
+  .viz-arrow {
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+  
+  .viz-button:hover {
+    border-color: var(--accent);
+  }
+  
+  .viz-button:hover .viz-button-label {
+    font-weight: 700;
+    color: var(--accent);
+  }
+  
+  .viz-button:hover .viz-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* ---------------------------------------------------------
+     9) Footer (centered + pushed lower)
+  --------------------------------------------------------- */
+  
+  footer {
+    width: 100%;
+    margin: 0 auto;
+    padding: 4rem 0 2.5rem;
+    text-align: center;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  footer p {
+    margin: 0;
+    text-align: center;
+  }
+  
+  /* ---------------------------------------------------------
+     10) Visualizations page layout (visualizations.html)
+  --------------------------------------------------------- */
+  
+  .viz-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-bottom: 2rem;
+  }
+  
+  .viz-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1rem;
+  }
+  
+  .viz-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .viz-note {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-top: 0.75rem;
+  }
+  
+  .viz-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: #fff;
+  }
+  
+  /* Controls on viz cards */
+  .viz-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+  
+  .viz-controls label {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  
+  .viz-controls select,
+  .viz-controls button {
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font: inherit;
+    background: #fff;
+    color: var(--text);
+  }
+  
+  .viz-controls button {
+    cursor: pointer;
+  }
+  
+  .viz-controls button:hover {
+    border-color: var(--accent);
+  }
+  
+  /* SVG: let it resize nicely inside containers */
+  svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* ---------------------------------------------------------
+     11) Chart colors (used by vis.js SVG classes)
+  --------------------------------------------------------- */
+  
+  .viz-svg .bar {
+    fill: rgba(255, 119, 200, 0.75); /* default pink */
+    stroke: rgba(17, 17, 17, 0.15);
+    stroke-width: 1.2px;
+  }
+  
+  .viz-svg .bar--cutback {
+    fill: rgba(255, 224, 138, 0.9); /* warm yellow */
+    stroke: rgba(255, 224, 138, 1);
+  }
+  
+  .viz-svg .bar--peak {
+    fill: rgba(80, 80, 255, 0.75); /* accent blue */
+  }
+  
+  .viz-svg .bar--taper {
+    fill: rgba(255, 119, 200, 0.45); /* lighter pink */
+  }
+  
+  .viz-svg .bar--race {
+    fill: rgba(230, 0, 38, 1); /* red for race week */
+  }
+  

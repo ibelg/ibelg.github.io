@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Fonts: Space Grotesk for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Page setup -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualizations</title>
+
+    <!-- Same CSS as the main site so everything feels consistent -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Header + quick way back to the main portfolio page -->
+    <header>
+      <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+      <h1>Visualization Portfolio</h1>
+      <p>SVG data visualization and SVG art</p>
+    </header>
+
+    <main class="viz-grid">
+      <!-- DATA VIZ -->
+      <section class="viz-card">
+        <div class="viz-head">
+          <h2>16-Week Marathon Training Plan</h2>
+
+          <!-- Unit toggle: JS reads #metric and updates the chart -->
+          <div class="viz-controls">
+            <label for="metric">
+              Units
+              <select id="metric">
+                <option value="km" selected>km</option>
+                <option value="mi">miles</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <!-- Chart gets injected into this container by vis.js -->
+        <div class="viz-wrap" id="vizContainer"></div>
+
+        <p class="viz-note">
+          Weekly total running distance across a 16-week marathon plan.
+        </p>
+      </section>
+
+      <!-- SVG / CREATIVE ART -->
+      <section class="viz-card">
+        <div class="viz-head">
+          <h2>Hello Kitty Eats Strawberries</h2>
+
+          <!-- Buttons are hooked up in JS -->
+          <div class="viz-controls">
+            <button id="spawnBerry" type="button">Spawn strawberry</button>
+            <button id="togglePause" type="button">Pause</button>
+            <button id="resetGame" type="button">Reset</button>
+          </div>
+        </div>
+
+        <p class="viz-note">
+          Hello Kitty is HUNGRY! Move your mouse to guide her to eat the strawberries.
+        </p>
+
+        <!-- Art gets injected into this container by JS -->
+        <div class="viz-wrap" id="artContainer"></div>
+
+        <p class="viz-note">
+          Shortcuts: <strong>S</strong> spawn • <strong>P</strong> pause/resume •
+          <strong>R</strong> reset
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Isabel Garcia</p>
+    </footer>
+
+    <!-- Scripts: vis.js sets up the SVGs, main.js handles interactions -->
+    <script src="vis.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Fonts: Space Grotesk for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Page setup -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isabel Garcia | Personal Website</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!--
+      Top intro: name and one liner bio.
+    -->
+      <header>
+        <h1>Isabel Garcia</h1>
+        <p>UX Designer | SIAT Student @ SFU | B.A. in International Relations from UBC</p>
+      
+        <!-- Contact links (quick access, visible immediately) -->
+        <nav class="header-links">
+          <a href="mailto:isabelgarcia0500@gmail.com">Email</a>
+          <a
+            href="https://isabelgarciaportfolio.framer.website/about"
+            target="_blank"
+            rel="noopener"
+          >
+            Portfolio
+          </a>
+          <a
+            href="https://www.linkedin.com/in/isabel-garcia-09bb40288/"
+            target="_blank"
+            rel="noopener"
+          >
+            LinkedIn
+          </a>
+        </nav>
+      </header>
+
+    <!-- Little personal logo (sits between header + About) -->
+    <img
+      src="assets/logoforme.png"
+      alt="Illustrated personal logo"
+      class="about-image"
+    />
+
+    <main>
+      <!-- About: not styled as a card (so it feels more like an intro than a section box) -->
+      <section id="about" class="no-card">
+        <h2>About Me</h2>
+        <p>
+          Hi there, I'm a digital designer passionate about creating meaningful and inclusive
+          digital experiences. I design with empathy, prioritize accessibility, and sometimes
+          overthink typography. I'm drawn to work that brings people together and supports real
+          communities, and I'm always eager to diversify my experience through new opportunities!
+        </p>
+      </section>
+
+      <!-- Main CTA: sends people to the visualizations page -->
+      <a href="visualizations.html" class="viz-button">
+        <span class="viz-button-label">
+          View my data visualizations
+          <span class="viz-arrow">→</span>
+        </span>
+      </a>
+
+      <!-- Work preview: only this card should be clickable + link out to Framer Portfolio -->
+      <section id="work-preview" class="no-card">
+        <h2>Past Design Projects</h2>
+
+        <a
+          href="https://isabelgarciaportfolio.framer.website/work/fuorisalonemicrosite/"
+          target="_blank"
+          rel="noopener"
+          class="work-link"
+        >
+          <div class="work-card">
+            <!-- Hover overlay to hint that this is clickable -->
+            <div class="work-overlay">
+              <span>See more about this project →</span>
+            </div>
+
+            <!-- Two short looping clips as a “preview strip” -->
+            <div class="work-media">
+              <video
+                src="assets/project-1.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+              ></video>
+              <video
+                src="assets/project-2.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+              ></video>
+            </div>
+
+            <!-- Quick metadata (title + what kind of work the project is) -->
+            <div class="work-meta">
+              <h3>Fuorisalone Microsite</h3>
+              <p>Interaction and Visual Web Design</p>
+            </div>
+          </div>
+        </a>
+      </section>
+
+      <!-- Education -->
+      <section id="education">
+        <h2>Education</h2>
+        <ul>
+          <li>
+            <strong>Simon Fraser University</strong> — B.Sc. in Interactive Arts and Technology
+            <em> - Expected April 2027</em>
+          </li>
+          <li>
+            <strong>University of British Columbia</strong> — B.A. in International Relations
+            <em> - May 2024</em>
+          </li>
+          <li>
+            <strong>Sciences Po</strong> — Certificate of Studies in Social Sciences and Humanities
+            <em> - May 2023</em>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>Figma / Design Tools</li>
+          <li>UX Research</li>
+          <li>Information Architecture</li>
+          <li>HTML, CSS, JavaScript</li>
+          <li>Git & GitHub</li>
+          <li>Data visualization (Tableau, Observable)</li>
+        </ul>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience">
+        <h2>Experience</h2>
+        <ul>
+          <li>
+            <strong>UX Design Lead</strong>, Atria Community — Vancouver, BC —
+            <em>Jan 2024 to June 2025</em>
+            <ul>
+              <li>
+                Led the UX design of a volunteer-matching web platform focused on poverty reduction
+                and community collaboration.
+              </li>
+              <li>Defined design strategy and user flows to improve usability, engagement, and accessibility.</li>
+              <li>Created wireframes and prototypes to communicate design concepts across the team.</li>
+              <li>Collaborated closely with product managers and developers to support implementation.</li>
+              <li>Provided design feedback and mentorship to other designers.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>UX Design Intern</strong>, Koda Kollectiv — Vancouver, BC —
+            <em>Nov 2024 to Feb 2025</em>
+            <ul>
+              <li>Contributed to projects including a contract form, ride-hailing and delivery app, and website redesign.</li>
+              <li>Designed high-fidelity wireframes and prototypes in Figma.</li>
+              <li>Worked cross-functionally with design, development, and project management teams.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Project Assistant</strong>, Go Global, University of British Columbia — Vancouver, BC —
+            <em>May 2024 to Aug 2024</em>
+            <ul>
+              <li>Supported international student mobility programs across 200+ partner universities.</li>
+              <li>Provided advising, administrative support, and research assistance.</li>
+              <li>Contributed to the Go Global website redesign by curating and implementing on-brand visual assets.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Isabel Garcia</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="main.js"></script>
+  </body>
+</html>
