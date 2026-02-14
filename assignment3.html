@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Fonts: Space Grotesk for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Page setup -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IAT355 Assignment 3 — Video Game Sales (Vega-Lite)</title>
+
+    <!-- Same CSS as the main site so everything feels consistent -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+      <h1>IAT355 Assignment 3</h1>
+      <p>Video Game Sales — Vega-Lite Visual Explorations</p>
+    </header>
+
+    <main class="viz-grid">
+      <!-- VIZ 1 -->
+      <section class="viz-card">
+        <div class="viz-head">
+          <h2>Visualization 1: Global Sales by Genre and Platform</h2>
+        </div>
+
+        <p class="viz-note">
+          <strong>Prompt 1:</strong> Which platforms dominate global sales within each genre?
+        </p>
+        <p class="viz-note">
+          <strong>Prompt 2:</strong> Are some genres more dependent on specific platforms than others?
+        </p>
+
+        <div class="vega-wrap" id="vg-viz1"></div>
+
+        <p class="viz-note">
+          This visualization shows how global video game sales are distributed across platforms within
+          each genre. The stacked bars reveal which platforms contribute the most to each genre’s
+          sales and whether success is concentrated on a single platform or spread across multiple
+          systems. This helps highlight patterns of platform dominance and genre dependence.
+        </p>
+      </section>
+
+      <!-- VIZ 2 -->
+      <section class="viz-card">
+        <div class="viz-head">
+          <h2>Visualization 2: Sales Over Time by Platform and Genre</h2>
+        </div>
+
+        <p class="viz-note">
+          <strong>Prompt 1:</strong> For a selected platform, how does the genre mix of global sales change over time?
+        </p>
+        <p class="viz-note">
+          <strong>Prompt 2:</strong> Do platforms develop distinct “genre signatures” during their peak years?
+        </p>
+
+        <div class="vega-wrap" id="vg-viz2"></div>
+
+        <p class="viz-note">
+          This visualization shows how the mix of game genres contributing to a platform’s sales
+          changes over time. Each year represents 100% of that platform’s sales, and the colored
+          layers show what share each genre contributes. This makes it easier to spot shifts in a
+          platform’s “identity” over its lifespan.
+        </p>
+      </section>
+
+      <!-- VIZ 3 -->
+      <section class="viz-card">
+        <div class="viz-head">
+          <h2>Visualization 3: Regional Sales vs. Platform</h2>
+        </div>
+
+        <p class="viz-note">
+          <strong>Prompt 1:</strong> How do platform sales distributions differ across global regions?
+        </p>
+        <p class="viz-note">
+          <strong>Prompt 2:</strong> What regional market preferences can be identified from platform sales patterns?
+        </p>
+
+        <div class="vega-wrap" id="vg-viz3"></div>
+
+        <p class="viz-note">
+          This visualization compares platform sales across North America, Europe, Japan, and other
+          regions to highlight geographic differences in market preferences. Splitting regions into
+          separate panels makes it easier to compare which platforms dominate each market.
+        </p>
+      </section>
+
+     <!-- VIZ 4 -->
+<section class="viz-card">
+    <div class="viz-head">
+      <h2>Visualization 4: Regional Platform Specialization (Visual Story)</h2>
+    </div>
+  
+    <p class="viz-note">
+      <strong>Prompt 1:</strong> Which platforms are regionally specialized relative to their global baseline?
+    </p>
+    <p class="viz-note">
+      <strong>Prompt 2:</strong> What does regional specialization suggest about market segmentation across regions (NA/EU/JP/Other)?
+    </p>
+  
+    <div class="vega-wrap" id="vg-viz4"></div>
+  
+    <p class="viz-note">
+      This heatmap compares each platform’s share of sales in a region to its share globally. Values above 1 mean the
+      platform is disproportionately popular in that region, while values below 1 mean it is under-represented. The
+      goal is to highlight regional “home bases” and market segmentation patterns rather than just raw sales totals.
+    </p>
+  </section>
+  
+    </main>
+
+    <footer>
+      <p>© 2026 Isabel Garcia</p>
+    </footer>
+
+    <!-- Vega / Vega-Lite (for Assignment 3 charts) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-dsv@3"></script>
+
+    <!-- Your A3 Vega-Lite charts -->
+    <script src="a3-vega.js"></script>
+  </body>
+</html>

@@ -8,12 +8,13 @@ Portfolio Styles
 
 /* Heading font */
 @font-face {
-    font-family: "GT Pressura Mono";
-    src: url("fonts/GT-Pressura-Mono-Regular.otf") format("opentype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
+  font-family: "GT Pressura Mono";
+  src: url("fonts/gt_pressura_mono/GT-Pressura-Mono-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
   
   :root {
     /* Colors */
@@ -430,6 +431,23 @@ Portfolio Styles
     background: #fff;
   }
   
+  /* Vega-Lite containers (don’t crop axes/labels) */
+.vega-wrap {
+  width: 100%;
+  overflow: visible;     /* allow axis labels to show */
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 8px;          /* gives axes breathing room */
+}
+
+/* Make embedded Vega charts responsive */
+.vega-wrap .vega-embed,
+.vega-wrap .vega-embed > svg,
+.vega-wrap .vega-embed > canvas {
+  max-width: 100%;
+}
+
   /* Controls on viz cards */
   .viz-controls {
     display: flex;
