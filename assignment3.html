@@ -30,7 +30,7 @@
       <!-- VIZ 1 -->
       <section class="viz-card">
         <div class="viz-head">
-          <h2>Visualization 1: Global Sales by Genre and Platform</h2>
+          <h2>Visualization 1A: Global Sales by Genre and Platform</h2>
         </div>
 
         <p class="viz-note">
@@ -43,17 +43,32 @@
         <div class="vega-wrap" id="vg-viz1"></div>
 
         <p class="viz-note">
-          This visualization shows how global video game sales are distributed across platforms within
-          each genre. The stacked bars reveal which platforms contribute the most to each genre’s
-          sales and whether success is concentrated on a single platform or spread across multiple
-          systems. This helps highlight patterns of platform dominance and genre dependence.
+          This chart shows how total video game sales are distributed across platforms within each genre. By stacking platform contributions, it reveals which systems dominate each genre and whether success is concentrated on a single platform or spread across many. The visualization highlights patterns of platform dominance and shows how genre popularity varies across gaming ecosystems.
         </p>
       </section>
+
+      <!-- VIZ 1B -->
+      <section class="viz-card">
+    <div class="viz-head">
+    <h2>Visualization 1B: Average Global Sales per Game by Genre</h2>
+    </div>
+
+    <p class="viz-note">
+    <strong>Prompt 3:</strong> Which genres generate the highest average sales per game on different platforms?
+
+    </p>
+
+    <div class="vega-wrap" id="vg-viz1b"></div>
+
+    <p class="viz-note">
+      This chart compares the average sales per game for the top-performing platforms within each genre. Instead of showing total volume, it highlights where individual titles perform strongest. This makes it easier to see which platforms produce blockbuster releases and whether success comes from many games or a few high-impact hits.
+    </section>
+
 
       <!-- VIZ 2 -->
       <section class="viz-card">
         <div class="viz-head">
-          <h2>Visualization 2: Sales Over Time by Platform and Genre</h2>
+          <h2>Visualization 2A: Sales Over Time by Platform and Genre</h2>
         </div>
 
         <p class="viz-note">
@@ -66,17 +81,32 @@
         <div class="vega-wrap" id="vg-viz2"></div>
 
         <p class="viz-note">
-          This visualization shows how the mix of game genres contributing to a platform’s sales
-          changes over time. Each year represents 100% of that platform’s sales, and the coloured
-          layers show what share each genre contributes. This makes it easier to spot shifts in a
-          platform’s identity over the years.
+          This visualization shows how the mix of game genres contributing to a platform’s sales changes over time. Each year represents 100% of that platform’s sales, allowing you to see how genre dominance shifts throughout its lifecycle. The chart reveals how platforms develop distinct identities and how player preferences evolve.
         </p>
       </section>
 
-      <!-- VIZ 3 -->
+      <!-- VIZ 2B -->
+    <section class="viz-card">
+    <div class="viz-head">
+    <h2>Visualization 2B: Platform Sales Lifespan</h2>
+    </div>
+
+    <p class="viz-note">
+    <strong>Prompt 3:</strong> Which platforms have the longest sales lifespan, meaning they stay strong across many years instead of briefly peaking?
+    </p>
+
+    <div class="vega-wrap" id="vg-viz1c"></div>
+
+   <p class="viz-note">
+    This chart measures platform longevity by counting how many years each platform stays above 20% of its peak annual sales. Rather than focusing on a single peak moment, it highlights which systems remained strong over time. This helps distinguish short-lived spikes from platforms with sustained relevance.
+    </p>
+   </section>
+
+
+      <!-- VIZ 3A -->
       <section class="viz-card">
         <div class="viz-head">
-          <h2>Visualization 3: Regional Sales vs. Platform</h2>
+          <h2>Visualization 3A: Regional Sales vs. Platform</h2>
         </div>
 
         <p class="viz-note">
@@ -89,16 +119,33 @@
         <div class="vega-wrap" id="vg-viz3"></div>
 
         <p class="viz-note">
-          This visualization compares platform sales across North America, Europe, Japan, and other
-          regions to highlight geographic differences in market preferences. Splitting regions into
-          separate panels makes it easier to compare which platforms dominate each market.
+          This visualization compares platform sales across North America, Europe, Japan, and other regions. Splitting regions into panels makes it easier to see differences in market preferences and identify which platforms dominate each region. The chart reveals how platform success varies across global markets.
         </p>
       </section>
+      
+<!-- VIZ 3B -->
+<section class="viz-card">
+  <div class="viz-head">
+    <h2>Visualization 3B: Regional Platform Specialization</h2>
+  </div>
 
-     <!-- VIZ 4 -->
+  <p class="viz-note">
+    <strong>Prompt 3:</strong> Which platforms demonstrate regional specialization rather than global popularity?
+  </p>
+
+  <div class="vega-wrap" id="vg-viz3b"></div>
+
+  <p class="viz-note">
+    This heatmap shows where platforms perform disproportionately well compared to their global share. Darker cells indicate platforms that are especially popular in a specific region. Instead of showing raw sales, the visualization highlights regional preferences and helps identify platforms that thrive in particular markets.
+  </p>
+</section>
+
+      
+
+     <!-- VIZ 4A -->
 <section class="viz-card">
     <div class="viz-head">
-      <h2>Visualization 4: Regional Platform Specialization (Visual Story)</h2>
+      <h2>Visualization 4A: Regional Platform Specialization</h2>
     </div>
   
     <p class="viz-note">
@@ -111,11 +158,27 @@
     <div class="vega-wrap" id="vg-viz4"></div>
   
     <p class="viz-note">
-      This heatmap compares each platform’s share of sales in a region to its share globally. Values above 1 mean the
-      platform is disproportionately popular in that region, while values below 1 mean it is under represented. The
-      goal is to highlight regional home bases and market segmentation patterns rather than just raw sales totals.
+      This heatmap shows how platform popularity differs across regions by comparing each platform’s regional sales share to its global share. Values above 1 indicate that a platform is more popular in a region than expected worldwide, while lower values indicate under-representation. By focusing on proportional differences rather than raw sales, the visualization highlights regional preferences and reveals how platform success is shaped by cultural alignment and local gaming ecosystems.
     </p>
   </section>
+
+  <!-- VIZ 4B -->
+<section class="viz-card">
+  <div class="viz-head">
+    <h2>Visualization 4B: Global Gaming Culture Flow</h2>
+  </div>
+
+  <p class="viz-note">
+    <strong>Prompt:</strong> Which regions act as dominant exporters of gaming culture versus niche markets with localized platform ecosystems?
+  </p>
+
+  <div class="vega-wrap" id="vg-viz4b"></div>
+
+  <p class="viz-note">
+    This chart shows how global video game sales are distributed across regions. It reveals which regions represent the largest share of the global market and which reflect more localized consumption. Together with regional specialization patterns, it highlights how gaming culture and industry influence are unevenly distributed worldwide.
+  </p>
+</section>
+
   
     </main>
 
