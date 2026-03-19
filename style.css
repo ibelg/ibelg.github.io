@@ -515,3 +515,24 @@ Portfolio Styles
     fill: rgba(230, 0, 38, 1); /* red for race week */
   }
   
+/* ---------------------------------------------------------
+   12) D3 extension page
+--------------------------------------------------------- */
+
+.d3-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+#d3-container svg {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(to bottom, #fcfbff, #f6f2ff);
+  cursor: crosshair;
+}
